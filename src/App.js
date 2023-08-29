@@ -3,17 +3,25 @@ import React from 'react'
 
 export default function App() {
     
-    const [firstName, setFirstName]= React.useState('')
-    const [lastName, setLastName]= React.useState('')
-  
-    console.log(firstName)
-    function handleChange(event){
-      if (event.target.placeholder=== "First Name"){
-        setFirstName(event.target.value)
-      }else if (event.target.placeholder === "Last Name"){
-        setLastName(event.target.value)
-      }
+    const [formData, setFormData]= React.useState({
+      firstName: "",
+      lastName: ""
+    })
+    console.log(formData)
+    
+    
+    function handleChange(){
+    
+      setFormData(prevFormData => {
+        return {...prevFormData,
+        [event.target.name]: event.target.value}
+      })
+      
     }
+  
+    
+   
+    
     
     return (
         <form>
@@ -22,14 +30,14 @@ export default function App() {
                 type="text"
                 placeholder="First Name"
                 onChange= {handleChange}
-                
+                name= "firstName"
             />
 
             <input
                 type="text"
                 placeholder="Last Name"
                 onChange= {handleChange}
-                
+                name= "lastName"
             />
         </form>
     )
