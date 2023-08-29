@@ -25,7 +25,7 @@ export default function App() {
                 
             />
 
-<input
+            <input
                 type="text"
                 placeholder="Last Name"
                 onChange= {handleChange}
