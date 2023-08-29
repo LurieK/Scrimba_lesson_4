@@ -10,13 +10,13 @@ export default function App() {
     console.log(formData)
     
     
-    function handleChange(){
+    function handleChange(event){
     
       setFormData(prevFormData => {
         return {...prevFormData,
         [event.target.name]: event.target.value}
       })
-      
+
     }
   
     
