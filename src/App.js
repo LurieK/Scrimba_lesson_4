@@ -1,10 +1,23 @@
 import "./styles.css";
+import React from 'react'
 
 export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+    
+    const [firstName, setFirstName]= React.useState('')
+    console.log(firstName)
+    function handleChange(event){
+      setFirstName(event.target.placeholder)
+    }
+    
+    return (
+        <form>
+
+            <input
+                type="text"
+                placeholder="First Name"
+                onChange= {handleChange}
+                
+            />
+        </form>
+    )
 }
